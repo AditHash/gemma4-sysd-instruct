@@ -1,0 +1,22 @@
+[
+  "How do you implement dependency injection in FastAPI?",
+  "What is the difference between asyncio.gather and asyncio.wait?",
+  "How do you handle database connection pooling in SQLAlchemy async?",
+  "What is the difference between RAG and fine-tuning? When should you use each?",
+  "How do you set up a LangChain agent with tool calling?",
+  "What is the correct way to handle JWT expiry in FastAPI middleware?",
+  "How do you avoid cold starts in AWS Lambda with Python?",
+  "What is semantic chunking and when is it better than fixed-size chunking?",
+  "How do you implement rate limiting per user in FastAPI?",
+  "What are the trade-offs between Pinecone and ChromaDB for RAG?",
+  "How do you structure a FastAPI project for production with multiple routers?",
+  "What is the difference between Celery and asyncio for background tasks?",
+  "How do you implement exponential backoff with the tenacity library?",
+  "What is the purpose of a vector index and how does HNSW work?",
+  "How do you stream LLM responses from OpenAI API in FastAPI?",
+  "What are the best practices for Docker multi-stage builds for Python apps?",
+  "How do you implement distributed locking with Redis in Python?",
+  "What is the difference between REST and gRPC? When would you choose gRPC?",
+  "How do you handle schema migrations in SQLAlchemy with Alembic?",
+  "What observability stack would you use for a Python microservice on AWS?"
+]

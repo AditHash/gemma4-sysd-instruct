@@ -1,0 +1,53 @@
+[project]
+name = "gemma4-backend-ai-instruct"
+version = "0.1.0"
+description = "Agentic data pipeline + Gemma 4 fine-tuning for backend/AI engineering"
+requires-python = ">=3.11"
+
+dependencies = [
+    # Dataset generation
+    "groq>=0.9.0",
+    "sentence-transformers>=3.0.0",
+    "tenacity>=8.2.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.27.0",
+    "loguru>=0.7.0",
+    # HuggingFace
+    "huggingface-hub>=0.23.0",
+    "datasets>=2.19.0",
+    # Evaluation
+    "rouge-score>=0.1.2",
+    # Inference API
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    # Scripts
+    "rich>=13.7.0",
+    "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+# Install on Colab / GPU machine only — not needed for data generation
+train = [
+    "trl>=0.9.0",
+    "transformers>=4.41.0",
+    "peft>=0.11.0",
+    "accelerate>=0.30.0",
+    "bitsandbytes>=0.43.0",
+]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.uv]
+# unsloth is installed separately on Colab via:
+# !pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+# It is NOT in pyproject.toml — it requires a CUDA environment to install.
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dataset_generator", "finetuning", "inference"]
