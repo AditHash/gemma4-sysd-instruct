@@ -160,6 +160,13 @@ async def run_pipeline(dry_run: bool = False, topics: list[str] | None = None) -
 
 if __name__ == "__main__":
     import argparse
+    import sys
+    from loguru import logger as _logger
+
+    # Ensure logs are visible in all terminals (Windows CMD, PowerShell, Git Bash)
+    _logger.remove()
+    _logger.add(sys.stderr, level="INFO", colorize=True,
+                format="<green>{time:HH:mm:ss}</green> | <level>{level: <8}</level> | {message}")
 
     parser = argparse.ArgumentParser(description="Run dataset generation pipeline")
     parser.add_argument("--dry-run", action="store_true", help="Test run: 1 topic, 5 samples")
